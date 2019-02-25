@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>O teu nome celtosuevo</title>
+	
+	<meta name="keywords" content="nome,celtosuevo">
+	<meta name="author" content="Modesto del Río">
+	<link href='https://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+
+<div id="page">
+<p>O teu nome celtosuevo é</p>
+<h1 id="nomeCeltoSuevo" onclick="nome();"></h1>
+</div>
+<script>
+	var nome = function () {
+		var cons = "bcdfghjklmnprstvxzç";
+		var vogs = "aeiouãõ";
+		var res = cons[Math.floor(Math.random() * cons.length)].toUpperCase() + vogs[Math.floor(Math.random() * vogs.length)];
+		var long = Math.random() * 6;
+		for (i = 0; i < long; i++) {
+			res = res + cons[Math.floor(Math.random() * cons.length)];
+			i++;
+			res = res + vogs[Math.floor(Math.random() * vogs.length)];
+		}
+		document.getElementById("nomeCeltoSuevo").innerText = res;
+	}
+	nome();
+</script>
+</body>
+</html>

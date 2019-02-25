@@ -1,0 +1,38 @@
+html, body, #page {
+	margin: 0;
+	padding: 0; 
+	height: 100%;
+}
+
+#titulo p{
+	position: absolute;
+	bottom: 50px;
+	width: 100%;
+	text-align:center;
+	font-family: 'VT323', monospace;
+	font-size: 6em;
+	color: #FFF;
+	background-color: #000;
+	}
+
+#reloxo {
+	position: absolute;
+	bottom: 250px;
+	right: 150px;
+	text-align:right;
+	font-family: 'VT323', monospace;
+	font-size: 6em;
+	color: #FFF;
+	}
+
+
+#verde {
+	color: #00A020;
+}
+
+div .barras {
+	float:left;
+    width: 12.5%;
+	height: 100%;
+}
+

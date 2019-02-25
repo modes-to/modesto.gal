@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="gl">
+    <meta charset="UTF-8">
+    <title>Páxina com botão</title>
+    <style type="text/css">
+    body {
+            font-family: "Gill Sans", sans-serif;
+            font-size: 12px;
+        }
+        
+        .cabecera {
+            text-align: center;
+            font-weight: bold;
+            font-size: 2.5em;
+            color: blue;
+        }
+        
+        .Encabezado {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        .Obligatorio {
+            color: red;
+        }
+    
+    </style>
+
+<script type="text/javascript">
+    var fiestra=null;
+    function abrirPaxinaNova() {
+        if (fiestra && !fiestra.closed) {
+            fiestra.close()
+        }
+        else
+        {
+        fiestra = window.open("modesto.html", "novaFiestra", "height=400, width=600, location=no, status=no, toolbar=no");
+        nomeSaudar="Manolo";
+    }
+    // intervalo = setInterval(function () { comprobarFiestra() }, 1000);
+    }
+    // function comprobarFiestra() {
+    //     if (fiestra.closed) {clearInterval(intervalo);
+    //         abrirPaxinaNova();
+    // }
+    // }
+</script>
+ </head>
+
+<body>
+
+    <h1 class="cabecera">O botão mágico</h1>
+
+    <form name="frmDatos" action="/api/User" method="POST" class="cabecera">
+            <input type="button" name="Premer" onclick="abrirPaxinaNova();" value="Premer">
+    </form>
+    <div id="infoFormulario"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+
+ En el ejemplo de la etiqueta que persigue al ratón mostrando sus coordenadas, haz que cuando esté cerca del borde derecho
+de la página, lo suficiente como para que tape todo o parte de la etiqueta, ésta se muestre hacia el otro lado, de modo que
+siempre quede dentro del área visible de la página y no salgan barras de scroll. Añade a una página cualquiera (que tenga
+al menos varios elementos div, input de tipo text y párrafos de texto) la capacidad de detectar la pulsación de determinadas
+teclas que actuarán como atajos o teclas rápidas para un hipotético programa que tienes en esta página. Por ejemplo, que
+se detecte la pulsación de la tecla F1 y que esto haga que se muestre un div con ayuda, o la combinación de teclas CTRL+T
+para hacer cualquier otra cosa (en nuestro ejemplo, simplemente mostrará un alert). Debes asegurarte de un par de cosas:
+Que las teclas rápidas se detecten pulsándolas cuando el foco esté en cualquier parte de la página. Que si el foco está en
+algún elemento que acepte entrada de texto (un input de tipo text, por ejemplo) que no tengan efecto dichas teclas. Una pregunta
+importante: ¿Funcionan todas las combinaciones? Por ejemplo, realmente eres capaz de detectar y responder a CTRL+T siempre.
+Prueba con CTRL+Q a ver si pasa lo mismo... En el ejemplo de control básico de un marcianito que hemos desarrollado en este
+módulo, hemos visto que hay un pequeño problema: la imposibilidad de detectar la pulsación de dos teclas a la vez. El efecto
+de esto es que si queremos que el marcianito se mueva en diagonal, lo conseguiremos pero veremos que lo hace "a saltos" como
+si pulsásemos las dos flechas (por ejemplo abajo y a la izquierda) de manera alternativa, y no a la vez. Además, si esto
+fuese un juego real existiría otro problema más sutil pero importante: los movimientos no estarían sincronizados con el resto
+de movimientos de otros elementos del juego. Normalmente los juegos tienen un bucle de ejecución y redibujan todos los elementos
+del mismo a la vez a intervalos regulares (por ejemplo 40 veces por segundo). Así, cada 25 milisegundos se pinta cada marcianito,
+asteroide y demás elementos móviles autónomos reflejando su posición. Para los elementos que controla el usuario, si usamos
+los eventos del teclado, se moverían en un bucle diferente del resto del juego, y no necesariamente coincidente con los intervalos
+de refresco de los demás elementos. De entrada puede que no lo notásemos, pero generaría problemas y parpadeos indeseados.
+Entonces, ¿cómo se solucionan estos problemas si quisiésemos crear un juego con HTML y JavaScript? La solución consiste en
+detectar las pulsaciones del teclado, pero en lugar de procesarlas lo que hacemos es anotarlas en algún otro lugar (en un
+buffer). Es decir, en algún objeto auxiliar se van anotando cada una de las pulsaciones relevantes del teclado que hace el
+usuario (evento keydown), así como cuando deja de pulsar las teclas (keyup), pero no hacemos nada más que anotarlas. Es luego,
+en el bucle de redibujado de los elementos, en donde comprobamos ese buffer de pulsaciones y actuamos en consecuencia moviendo
+los objetos afectados. Con esto se consiguen procesar varias teclas a la vez (o tener la sensación de ello, más bien) y se
+consiguen movimientos más fluidos. Otra opción, incluso mejor, es anotar la posición de cada marcianito, modificándola en
+los eventos que se van produciendo, pero sin dibujarla, es decir, sin cambiar la posición real de los elementos móviles.
+Luego en el bucle de dibujado (un setInterval) es cuando realmente se dibujan los objetos, pero no en el momento mismo de
+detectar la pulsación de la tecla. Como ejercicio especial (no lo hagas si no te ves con fuerzas) te propongo cambiar el
+código de la página del marcianito por completo y hacerlo siguiendo la técnica que te acabo de explicar. Además deberías
+crear una clase para almacenar la información del marcianito y así no tener que almacenar su posición (y otros datos que
+tuviese) en una estructura aparte para poder redibujarla. Nota: De todos modos si estás pensando en hacer un juego en JavaScript
+es mejor usar alguna biblioteca especializada que ya nos da estas cosas y muchas otras ya hechas (aunque conviene conocer
+sus fundamentos). Hay infinidad de ellas en el mercado, casi todas gratuitas y Open Source. Por ejemplo Crafty, DarlingJS,
+LimeJS o ImpactJS. En cualquier caso ten en cuenta que la creación de juegos es un mundo en sí mismo y necesitarás aprender
+muchas técnicas específicas más allá de dominar los fundamentos de JavaScript.
+
+/-->
+
+
+
+
+
+<html>
+    <head></head>
+    <body></body>
+</html>

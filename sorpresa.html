@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> </title>
+    <style type="text/css">
+        .flotante
+        {
+            position:absolute;
+            border: 2px solid black;
+            border-radius: 10px;
+            width:50px; 
+            padding:5px;
+            font-size: small;
+            font-weight:bold;
+            text-align: center;
+            background-color:#FF80FF;
+            visibility: hidden;
+        }
+    </style>
+    <script type="text/javascript">
+
+		var mf = null;
+	
+	function comprobarF4(e) {
+            var code;
+            if (!e) var e = window.event;
+            if (e.keyCode) code = e.keyCode;
+            else if (e.which) code = e.which;
+            if (code == 115) initialize();
+        }
+	
+        function moveDiv(event)
+        {
+            		if (mf == null)
+				mf = document.getElementById("mensajeFlotante");
+            
+			//mf.textContent = "(" + event.clientX + ", " + event.clientY + ")";
+			mf.style.left = event.clientX + 10 + "px";
+            mf.style.top = event.clientY + "px";
+            mf.style.visibility = "visible";
+        }
+        
+        function escoitar()
+        {
+            document.addEventListener("keydown", comprobarF4, false);
+        }
+            
+        function initialize()
+        {
+            document.addEventListener("mousemove", moveDiv, false);
+        }
+
+        window.onload = escoitar;
+    </script>
+</head>
+<body>
+<h1>Pulsa F4</h2>
+<div id="mensajeFlotante" class="flotante">PUTA</div>
+</body>
+</html>

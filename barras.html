@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Taken by Modesto</title>
+
+    <meta name="keywords" content="Modesto">
+    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+
+</head>
+
+<body>
+
+    <div id="page">
+        <div id="titulo">
+            <p>modesto<span id="verde">.</span>tk</p>
+        </div>
+        <div id="reloxo">00:00:00</div>
+            
+    </div>
+    <script type="text/javascript">
+        var cores = ["#FFF", "#FF0", "#0FF", "#0F0", "#F0F", "#F00", "#00F", "#000"];
+        var divPage = document.getElementById("page");
+        var barras = "";
+        for (var i = 0; i < 8; i++) {
+            var novaBarra = document.createElement("div");
+            novaBarra.className = "barras";
+            novaBarra.id = "barra" + i;
+            novaBarra.style.backgroundColor = cores[i];
+            divPage.appendChild(novaBarra);
+        }
+        function amosarHora() {
+        var hora = new Date();
+        var h = hora.getHours().toString();
+        if (h.length===1) h = "0" + h;
+        var m = hora.getMinutes().toString();
+        if (m.length===1) m = "0" + m;
+        var s = hora.getSeconds().toString();
+        if (s.length===1) s = "0" + s;
+        document.getElementById("reloxo").textContent = h + ":" + m + ":" + s;
+        setTimeout("amosarHora()",1000);
+    }
+    amosarHora();
+    </script>
+</body>
+
+</html>
